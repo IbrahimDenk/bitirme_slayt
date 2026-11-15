@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.slidev/
+.preview/
+output/
+tmp/
+.tools/
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.log
