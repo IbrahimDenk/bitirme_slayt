@@ -4,15 +4,15 @@ import PendingValidation from './PendingValidation.vue'
 <template>
   <section class="targets-overview" aria-labelledby="targets-title">
     <header class="targets-heading"><h1 id="targets-title">Project Targets and Success Criteria</h1></header>
-    <p class="targets-subtitle"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 5h15v23H5V5h3 M11 3h10v5H11V3Z M10 15l2 2 4-4 M18 15h5 M10 23l2 2 4-4 M18 23h5" /></svg><span>Proposed targets for the Turkish pilot</span></p>
-    <table class="targets-table" aria-label="Proposed draft success criteria for the Turkish pilot; all targets pending validation">
+    <p class="targets-subtitle"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 5h15v23H5V5h3 M11 3h10v5H11V3Z M10 15l2 2 4-4 M18 15h5 M10 23l2 2 4-4 M18 23h5" /></svg><span>Proposed pilot targets for English and Turkish</span></p>
+    <table class="targets-table" aria-label="Proposed draft success criteria for English and Turkish; all targets pending validation">
       <colgroup><col class="target-id"><col class="target-name"><col class="target-criterion"><col class="target-verification"><col></colgroup>
       <thead><tr><th scope="col">ID</th><th scope="col">Project Target</th><th scope="col">Draft Success Criterion</th><th scope="col">Verified By</th><th scope="col">Status</th></tr></thead>
       <tbody>
         <tr><th scope="row">T1 · WP1</th><td>Relevant CV skill practice questions</td><td>At least <strong>80%</strong> of sampled questions address the intended CV skill.</td><td>Independent reviewer ratings</td><td><PendingValidation /></td></tr>
-        <tr><th scope="row">T2 · WP2</th><td>Relevant jobs near the top</td><td><strong>nDCG@5 exceeds the BM25 baseline</strong> on the <strong>same job pool</strong>.</td><td>Human-labeled Turkish CV–job pairs</td><td><PendingValidation /></td></tr>
+        <tr><th scope="row">T2 · WP2</th><td>Relevant jobs near the top</td><td><strong>nDCG@5 exceeds the BM25 baseline</strong> on the <strong>same job pool</strong>.</td><td>Human-labeled CV–job pairs in English and Turkish</td><td><PendingValidation /></td></tr>
         <tr><th scope="row">T3 · WP3</th><td>Evidence-grounded explanations and CV guidance</td><td>At least <strong>85%</strong> of sampled evidence links and <strong>85%</strong> of sampled CV suggestions are valid, <strong>measured separately</strong>.</td><td>Review against the original CV and job posting</td><td><PendingValidation /></td></tr>
-        <tr><th scope="row">T4 · WP4</th><td>AI interview scoring and feedback</td><td>Each valid test answer receives a <strong>0–3 score per rubric criterion</strong> and an improvement suggestion supported by a quote from the answer.</td><td>Automated checks on predefined Turkish test answers</td><td><PendingValidation /></td></tr>
+        <tr><th scope="row">T4 · WP4</th><td>AI interview scoring and feedback</td><td>Score only answers in the required language: <strong>0–3 per rubric criterion</strong>, plus an improvement tip backed by an answer quote.</td><td>Automated tests with English and Turkish answers, including wrong-language cases</td><td><PendingValidation /></td></tr>
         <tr><th scope="row">T5 · WP5</th><td>Complete candidate workflow</td><td>All predefined core scenarios pass end-to-end testing.</td><td>End-to-end test checklist</td><td><PendingValidation /></td></tr>
       </tbody>
     </table>

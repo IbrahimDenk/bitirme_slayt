@@ -13,7 +13,7 @@ const capabilities = [
 <template>
   <section class="originality-overview" aria-labelledby="originality-title">
     <header class="originality-heading"><h1 id="originality-title">Originality of the Project</h1></header>
-    <div class="originality-message"><RequirementEvidenceIcon /><p>Our prototype will link job requirements to CV evidence and use the same posting for Turkish video interview practice with AI scoring and feedback.</p></div>
+    <div class="originality-message"><RequirementEvidenceIcon /><p>We link job requirements to CV evidence and use the same posting for video interview practice. Questions and answers follow the language required by the job.</p></div>
     <table class="originality-table" aria-label="Documented or verified study and product capabilities, and planned capabilities of the proposed system">
       <colgroup><col class="capability-column"><col class="jobmatch-column"><col class="polyinterview-column"><col class="skill-column"><col class="startline-column"><col class="interviewplan-column"><col class="proposed-column"></colgroup>
       <thead><tr><th scope="col">Capability</th><th scope="col">JobMatchAI<br><span>[1]</span></th><th scope="col">PolyInterview<br><span>[2]</span></th><th scope="col">Turkish Skill<br>Extraction <span>[3]</span></th><th scope="col">Startline <span>[4]</span><small>Product</small></th><th scope="col">InterviewPlan<br>AI <span>[5]</span><small>Product</small></th><th scope="col">Proposed<br>System<small class="planned-label">(Planned)</small></th></tr></thead>

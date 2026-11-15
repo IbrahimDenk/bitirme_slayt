@@ -87,8 +87,14 @@ clicks: 0
 All content on this slide describes planned objectives and expected outcomes,
 not completed capabilities or measured results. CV skill practice questions target
 skills stated in the candidate's CV. The generation method is not yet confirmed.
-The candidate practises a Turkish video interview for the selected job. AI alone
-scores the answers and gives improvement suggestions. The model uses past
+The first release supports English and Turkish postings. The user chooses a search
+language; this selects the postings returned, including suitable jobs abroad. The
+selected job’s required language controls both the CV evidence and the video
+interview. For an English-required job, find English CV quotes and ask and accept
+answers only in English; apply the same rule in Turkish for a Turkish-required job.
+The candidate’s country or native language does not change this rule. Wrong-language
+answers receive no score; ask the candidate to answer again in the required language.
+AI alone scores accepted answers and gives improvement suggestions. The model uses past
 interview examples to guide scoring and feedback. The example-delivery mechanism
 is undecided, so no specific training or retrieval technique is claimed.
 CV guidance concerns existing skills, projects and experience.
@@ -161,8 +167,8 @@ the mock-practice product.
 
 Keep [1]–[5] assigned to these same works and products on slide 5.
 [3] evaluates skill extraction and ESCO linking from Turkish JOB POSTINGS.
-The proposed interview branch concerns Turkish INTERVIEW ANSWERS, scored only
-by AI. It uses past interview examples to guide scoring and feedback. The way
+The project supports English and Turkish postings. The proposed interview branch
+accepts answers only in the selected job’s required language, then uses AI scoring. It uses past interview examples to guide scoring and feedback. The way
 these examples reach the model is not yet decided. The Key Takeaway describes
 a planned evaluation of the candidate workflow, not achieved project results.
 -->
@@ -194,9 +200,11 @@ do not establish answer-level scoring accuracy; see Limitations.
 final row is Skill extraction from Turkish job ads: the [3] check denotes the
 documented research capability, while the Proposed System check denotes planned
 scope. This row concerns skill extraction from job ads, not interview scoring.
-The contribution sentence links requirement-level CV evidence to Turkish video
-practice for the same selected posting, with AI scoring and feedback guided by
-past interview examples. It does not claim a verified unique feature combination.
+The contribution sentence links requirement-level CV evidence to video practice
+for the same selected posting. The job’s required language sets the CV quote
+language and interview questions and answers. English and Turkish are supported.
+Wrong-language answers are not scored; request a new answer in the required language.
+AI uses past interview examples to guide scoring and feedback. It does not claim a verified unique feature combination.
 Other tools cover portions of the workflow; do not claim that combining matching,
 CV guidance and interview practice alone establishes originality.
 
@@ -243,24 +251,26 @@ clicks: 0
 <ProjectScope></ProjectScope>
 
 <!--
-This diagram is the proposed system architecture and planned candidate workflow.
-The CV Processing & Skills Agent extracts the candidate profile and generates
-practice questions relevant to skills listed in the CV. The question-generation
-method remains undecided. This practice branch is separate from the selected-job
-video interview. The Job Ranking Agent extracts skills from Turkish postings and
-ranks them by CV fit. The Evidence Matching Agent links job requirements to
-original CV excerpts. The grouped mapping node shows these related tasks, not a
-new orchestration layer or an implemented central coordinator.
-Selected job, candidate answers and prior interview examples feed the Interview
-& Scoring Agent. A Turkish video session is the candidate interaction modality.
-Audio transcription supplies the answer text for the planned scoring flow,
-consistent with the speech-to-text budget and WP4 transcription contingency.
-AI alone applies the rubric to answers and returns scores and improvement
-suggestions. The model uses past interview examples to guide scoring and
-feedback. How the examples are supplied remains undecided. The video session
-does not imply image, facial-expression or other visual-content analysis.
-CV guidance highlights existing experiences; automatic CV rewriting and application
-submission are not confirmed scope.
+This diagram shows the proposed architecture, not completed features.
+The first release supports English and Turkish job postings, including jobs abroad.
+User search preference selects which language of postings to fetch. It does not
+set the interview language. The selected job’s required language sets the language
+used to find supporting CV quotes and to run the video interview.
+For an English-required posting, check English CV quotes and ask English questions;
+accept only English answers. Apply the same rule in Turkish for a Turkish-required
+posting. Show both supporting excerpts and requirements with no CV evidence found.
+The candidate’s country and native language do not change these rules. The system
+does not count a quote in another language as evidence in the required language.
+Check answer language before scoring. If it is wrong, return no score and ask the
+candidate to answer again in the required language. This gate is separate from
+retrying an unclear speech-to-text transcript.
+AI alone scores accepted answers and gives feedback using past interview examples.
+How examples reach the model remains undecided. No human interview scorer is added.
+The CV-based skill practice branch is separate from the selected-job interview.
+Its question-generation method is not confirmed. Video does not imply facial or
+visual-content analysis. CV guidance highlights existing experience; automatic
+CV rewriting and job applications are outside the confirmed scope.
+Other languages may be added later, outside the first-release scope.
 Stable work-package identifiers for contribution, schedule and risk slides:
 WP1: CV Analysis & Skills Assessment.
 WP2: Job Posting Collection & Ranking.
@@ -281,7 +291,7 @@ clicks: 0
 <ProjectTargets />
 
 <!--
-All thresholds are proposed draft criteria for the Turkish pilot. These are not
+All thresholds are proposed draft criteria for an English and Turkish pilot. These are not
 achieved project results or performance values reported in the literature.
 All five targets remain Pending validation.
 
@@ -289,21 +299,24 @@ T1 / WP1: A question is relevant if it directly assesses the intended CV skill.
 This checks skill-targeted question practice, not scoring of interview answers.
 Independent reviewers resolve disagreements together.
 T2 / WP2: Compare BM25 and the proposed method using the same CVs, the same job pool
-and the same human relevance labels. nDCG@5 evaluates the ordering of relevant jobs
+and the same human relevance labels in English and Turkish. Human labels here
+concern job relevance, not interview answer scoring. nDCG@5 evaluates the ordering of relevant jobs
 among the first five results.
 T3 / WP3: An evidence link is valid when the CV excerpt exists in the source document
 and supports the associated job requirement. A CV suggestion is valid when it is
 relevant to the posting and grounded in the candidate's existing experience.
 Report validity for links and CV suggestions separately, each against the draft 85% threshold.
-T4 / WP4: AI alone scores Turkish answers. Automated checks on predefined valid
-Turkish test answers verify that every rubric dimension has a score, every score
-is numeric and within 0–3, an improvement suggestion is present, and its cited
-quote actually occurs in the answer. These are output-completeness, range and
-quote-presence checks. They do not establish scoring accuracy, appropriate score
-calibration, the usefulness of a suggestion, or whether a quoted passage supports
-the judgement. No fixed response count or human-scoring comparison is promised.
-The model uses past interview examples to guide scoring and feedback; the
-example-delivery method is undecided. T4 remains Pending validation.
+T4 / WP4: Check the answer language before AI scoring. Test English answers in
+English-required sessions and Turkish answers in Turkish-required sessions. Also
+test a Turkish answer in an English session and an English answer in a Turkish
+session. Reject each wrong-language answer without a score and ask for a new answer
+in the required language. Country and native language must not override this gate.
+AI alone scores accepted answers using past interview examples. Automated checks
+verify a numeric 0–3 score per rubric criterion, an improvement suggestion, and
+an exact quote that occurs in the accepted answer. These checks do not establish
+score accuracy, score calibration or the quality of feedback. No human interview
+scorer or human–AI score comparison is part of T4. The example-delivery method is
+undecided. T4 remains Pending validation.
 T5 / WP5: Predefine core end-to-end scenarios covering CV upload, job ranking,
 inspection of explained matches, selected-job CV guidance, and viewing feedback
 after the mock interview.
@@ -351,7 +364,7 @@ WP4: Mock Interview & Feedback; proposed lead Fatih Yunus Yıldız; W7–W12 inc
 WP5: Integration & Evaluation; both team members; W10–W14 inclusive.
 At the W10 start of WP5, plan an early integration check using one CV, one saved
 job posting and one sample answer. Check data flow through the core modules
-before the wider Turkish pilot. This is planned work, not a completed test.
+before the wider English and Turkish pilot. This is planned work, not a completed test.
 Lead identifies the primary responsible person, not the sole contributor.
 Fatih Yunus Yıldız coordinates the project and advisor updates.
 Both members handle integration and evaluation. Weekly team check-ins, advisor
@@ -376,10 +389,12 @@ WP1: If generated questions miss the target skill, use a reviewed bank tagged by
 The primary question source remains an open design decision.
 WP2: If online sources fail or change format, use curated saved postings for ranking and tests.
 WP3: Verify quoted excerpts against the CV; flag an uncertain link as Needs review.
-WP4: Retry transcription. If the transcript is still unclear, ask the candidate
-to repeat the answer. The candidate repeats their own answer; no observer approves
-the transcript and no person scores the interview answer. AI alone scores the
-answer transcript and supplies improvement suggestions.
+WP4: Speech recognition may misread technical terms in English or Turkish. Retry
+transcription; if it remains unclear, ask the candidate to repeat the answer in
+the required language. This is an unclear-transcript fallback, not the wrong-language
+gate. A clear answer in the wrong language is rejected before scoring and must also
+be repeated in the required language. No observer approves the transcript and no
+person scores interview answers. AI alone scores accepted answers and gives feedback.
 WP5: Test one complete scenario early and prioritize the core workflow if integration is delayed.
 WP colors use the same shared palette as slides 8 and 9.
 -->
@@ -437,17 +452,18 @@ scoring and feedback. The example-delivery mechanism is undecided.
 All success criteria remain Pending validation, consistent with slide 7.
 
 The End of Project I goal follows slide 9: integrate the core workflow and run an
-initial Turkish pilot during the proposed WP5 W10–W14 window.
+initial English and Turkish pilot during the proposed WP5 W10–W14 window.
 To test CV grounding, reviewers check that sampled excerpts exist in the original
 CV and support the associated job requirements; evaluate CV guidance separately
 against the candidate's existing experience (T3 / WP3).
-To check AI interview outputs, run the automated per-dimension score-presence and
-0–3 range checks, suggestion-presence checks and exact answer-quote checks
-described in T4 / WP4. These checks do not establish scoring accuracy.
+To check AI interview outputs, first test the required-language gate, including
+both directions of English/Turkish wrong-language answers. Then run automated
+per-criterion score-presence and 0–3 range checks, suggestion-presence checks and
+exact answer-quote checks described in T4 / WP4. These checks do not establish scoring accuracy.
 Thresholds remain draft criteria from slide 7, not achieved results.
-The Project I goal is an integrated core workflow and a small Turkish pilot.
-Project II will refine the prototype and extend evaluation to more roles and
-more Turkish CVs, job postings and interview answers. Both stages are plans.
+The Project I goal is an integrated workflow and a small English and Turkish pilot.
+Project II will refine the prototype and evaluate more roles using English and
+Turkish CVs, postings and interview answers. Both stages are plans.
 -->
 
 ---

@@ -81,7 +81,7 @@ const columnTracks = computed(() => Array.from({ length: 5 }, (_, index) =>
         </dl>
       </article>
     </div>
-    <section class="key-takeaway" aria-labelledby="takeaway-label"><h2 id="takeaway-label">Key Takeaway</h2><p>Prior work supports job ranking, tailored interviews, and Turkish skill extraction. Our project will test how reliably these components work together for Turkish-speaking job seekers.</p></section>
+    <section class="key-takeaway" aria-labelledby="takeaway-label"><h2 id="takeaway-label">Key Takeaway</h2><p>Prior work explores job ranking, tailored interviews, and Turkish skill extraction. We will test how job matching and video interview practice work together for English and Turkish job postings.</p></section>
   </section>
 </template>
 

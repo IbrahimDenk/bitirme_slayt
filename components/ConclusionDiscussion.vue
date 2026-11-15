@@ -51,7 +51,7 @@ onBeforeUnmount(stopCycle)
     <header class="conclusion-heading"><h1 id="conclusion-title">Conclusion and Discussion</h1></header>
     <div class="conclusion-findings">
       <section><h2>Project Progress</h2><p>The midterm plan defines the candidate workflow, five work packages, and draft validation criteria.</p></section>
-      <section><h2>Design Decisions</h2><p>The planned prototype links job requirements to CV excerpts and uses past interview examples to guide scoring and feedback.</p></section>
+      <section><h2>Design Decisions</h2><p>The platform links job requirements to CV quotes. Answers must use the job’s language before AI scores them.</p></section>
     </div>
     <div class="conclusion-divider" aria-hidden="true" />
     <ol class="conclusion-timeline" aria-label="Project stages and planned next steps">
@@ -62,11 +62,11 @@ onBeforeUnmount(stopCycle)
       </li>
       <li class="conclusion-stage" :class="{ 'is-current': isActive && currentStage === 1 }">
         <div class="stage-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m12 20 8-8 M10 17l-3 3a5 5 0 0 0 7 7l5-5a5 5 0 0 0 0-7 M22 15l3-3a5 5 0 0 0-7-7l-5 5a5 5 0 0 0 0 7" /></svg></div>
-        <h2>End of Project I</h2><p>Integrate the core workflow and run a small pilot with Turkish examples.</p>
+        <h2>End of Project I</h2><p>Integrate the core workflow and run a small pilot with English and Turkish examples.</p>
       </li>
       <li class="conclusion-stage" :class="{ 'is-current': isActive && currentStage === 2 }">
         <div class="stage-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 5h15v23H5V5h3 M11 3h10v5H11V3Z M10 15l2 2 4-4 M18 15h5 M10 23l2 2 4-4 M18 23h5" /></svg></div>
-        <h2>Project II</h2><p>Refine the prototype and evaluate more roles, Turkish CVs, postings, and interview answers.</p>
+        <h2>Project II</h2><p>Evaluate more roles using English and Turkish CVs, postings, and interview answers.</p>
       </li>
     </ol>
   </section>

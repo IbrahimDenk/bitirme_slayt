@@ -4,10 +4,10 @@ import RequirementEvidenceIcon from './RequirementEvidenceIcon.vue'
 const isActive = useIsSlideActive()
 const packages = [
   ['WP1', 'CV Analysis & Skills Assessment', 'Extract CV skills and generate practice questions relevant to each target skill.'],
-  ['WP2', 'Job Posting Collection & Ranking', 'Extract skills from Turkish job ads and rank postings by CV fit.'],
-  ['WP3', 'Match Explanations & CV Guidance', 'Link requirements to CV excerpts and suggest which existing experiences to highlight.'],
-  ['WP4', 'Mock Interview & Feedback', 'Run Turkish video practice with AI scoring and feedback guided by past examples.'],
-  ['WP5', 'Integration & Evaluation', 'Integrate the modules and evaluate matching and interview feedback on Turkish examples.'],
+  ['WP2', 'Job Posting Collection & Ranking', 'Find English or Turkish job postings based on user preference, then rank them by CV fit.'],
+  ['WP3', 'Match Explanations & CV Guidance', 'Link each requirement to CV evidence in the required language and suggest what to highlight.'],
+  ['WP4', 'Mock Interview & Feedback', 'Run video interviews in the required language. AI scores accepted answers and gives feedback.'],
+  ['WP5', 'Integration & Evaluation', 'Test CV matching and video interview feedback with English and Turkish examples.'],
 ]
 const inputPaths = ['M194 30H326V97H430', 'M194 120H326V97H430']
 const outputPaths = ['M917 97H941V32H967', 'M917 97H941V158H967']
@@ -18,7 +18,7 @@ const outputPaths = ['M917 97H941V32H967', 'M917 97H941V158H967']
     <h2 class="architecture-label scope-label">Proposed System Architecture</h2>
     <svg class="system-architecture" viewBox="0 0 1152 240" role="img" aria-labelledby="architecture-title architecture-description">
       <title id="architecture-title">Proposed candidate workflow</title>
-      <desc id="architecture-description">Candidate CV and Online Job Postings merge into Job Ranking and Requirement–Evidence Mapping. Ranked jobs, a match score and CV evidence support selection of a job. Selected Job branches to Tailored CV Guidance and Mock Interview and Feedback. A separate branch leads directly from Candidate CV to CV-based Skills Assessment, independently of the selected-job interview.</desc>
+      <desc id="architecture-description">The user chooses English or Turkish postings, including jobs abroad. Candidate CV and Online Job Postings merge into Job Ranking and Requirement–Evidence Mapping. The job requirements set the language used to find original CV quotes; missing evidence is shown. The selected job also sets the video interview language. Questions and answers must use that language. A wrong-language answer is not scored; the candidate must try again in the required language. AI scores accepted answers and gives feedback using past interview examples. A separate CV-based Skills Assessment branch provides practice questions. The candidate’s country does not change these rules.</desc>
       <defs><marker id="scope-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 7 3.5 0 7Z" fill="#819aa8" /></marker></defs>
       <g class="architecture-links" aria-hidden="true">
         <path v-for="d in inputPaths" :key="d" :d="d" marker-end="url(#scope-arrow)" />
@@ -51,7 +51,7 @@ const outputPaths = ['M917 97H941V32H967', 'M917 97H941V158H967']
         <RequirementEvidenceIcon x="445" y="60" width="25" height="25" class="evidence-icon" />
         <text x="480" y="78" class="node-title">Job Ranking &amp;</text>
         <text x="446" y="103" class="node-title">Requirement–Evidence Mapping</text>
-        <text x="446" y="129" class="node-detail">Ranked jobs · Match score · CV evidence</text>
+        <text x="446" y="129" class="node-detail">Scores · CV quotes in the required language</text>
       </g>
       <g class="architecture-node selected-node"><rect x="795" y="72" width="122" height="50" rx="6" /><text x="856" y="102" text-anchor="middle" class="node-title">Selected Job</text></g>
       <g class="architecture-node output-node">
@@ -63,6 +63,16 @@ const outputPaths = ['M917 97H941V32H967', 'M917 97H941V158H967']
         <rect x="967" y="126" width="185" height="64" rx="6" />
         <svg x="979" y="146" width="25" height="25" viewBox="0 0 32 32" class="node-icon"><rect x="11" y="3" width="10" height="17" rx="5" /><path d="M7 15v2a9 9 0 0 0 18 0v-2 M16 26v4 M11 30h10" /></svg>
         <text x="1014" y="154" class="node-title">Mock Interview</text><text x="1014" y="175" class="node-title">&amp; Feedback</text>
+      </g>
+      <g class="architecture-language-notes">
+        <text x="212" y="145" class="node-detail">English or Turkish postings</text>
+        <text x="212" y="162" class="node-detail">Based on user search preference</text>
+        <text x="430" y="30" class="node-detail">Job requirements and required language</text>
+        <text x="446" y="165" class="node-detail">Show gaps when no CV evidence is found</text>
+        <text x="795" y="143" class="node-detail">Required interview</text>
+        <text x="795" y="160" class="node-detail">language</text>
+        <text x="430" y="209" class="node-detail">Questions and answers use the job’s required language.</text>
+        <text x="430" y="229" class="language-rule">Check language before scoring. Wrong language: retry, no score. AI uses past examples.</text>
       </g>
     </svg>
     <section class="work-packages" aria-labelledby="packages-title">
@@ -83,6 +93,7 @@ const outputPaths = ['M917 97H941V32H967', 'M917 97H941V158H967']
 .assessment-node > rect { fill: #102238; }
 .node-title { fill: var(--capstone-paper); font-size: 16px; font-weight: 500; }
 .node-detail { fill: var(--capstone-muted); font-size: 13px; }
+.language-rule { fill: var(--capstone-teal); font-size: 13px; }
 .node-icon { fill: none; stroke: var(--capstone-teal); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .evidence-icon { color: var(--capstone-teal); }
 .architecture-links { fill: none; stroke: #819aa8; stroke-width: 1.3; stroke-linejoin: round; }

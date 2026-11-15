@@ -21,7 +21,7 @@ const isActive = useIsSlideActive()
         </li>
         <li class="flow-step">
           <div class="flow-icon" aria-hidden="true"><span class="icon-highlight" /><svg viewBox="0 0 32 32"><path d="m12 20 8-8 M10 17l-3 3a5 5 0 0 0 7 7l5-5a5 5 0 0 0 0-7 M22 15l3-3a5 5 0 0 0-7-7l-5 5a5 5 0 0 0 0 7" /></svg></div>
-          <div class="step-copy"><h2>Explainable Job Matching</h2><p>Score each match and show which CV excerpts support the job requirements.</p></div>
+          <div class="step-copy"><h2>Explainable Job Matching</h2><p>Match job requirements to CV evidence in the required language.</p></div>
         </li>
         <li class="flow-step">
           <div class="flow-icon" aria-hidden="true"><span class="icon-highlight" /><svg viewBox="0 0 32 32"><path d="m6 21 15-15a3 3 0 0 1 5 5L11 26l-7 2 2-7Z M18 9l5 5 M6 21l5 5" /></svg></div>
@@ -29,7 +29,7 @@ const isActive = useIsSlideActive()
         </li>
         <li class="flow-step">
           <div class="flow-icon" aria-hidden="true"><span class="icon-highlight" /><svg viewBox="0 0 32 32"><rect x="11" y="3" width="10" height="17" rx="5" /><path d="M7 15v2a9 9 0 0 0 18 0v-2 M16 26v4 M11 30h10" /></svg></div>
-          <div class="step-copy"><h2>Mock Interview</h2><p>Run a role-specific video mock interview with AI scoring and feedback.</p></div>
+          <div class="step-copy"><h2>Mock Interview</h2><p>Run a video mock interview in the language required by the job.</p></div>
         </li>
       </ol>
     </section>

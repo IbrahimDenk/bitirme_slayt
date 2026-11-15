@@ -84,6 +84,11 @@ ve ortam değişkeni dosyaları Git dışında tutulur.
 
 ## İçerik durumu
 
+İlk sürüm İngilizce ve Türkçe ilanları destekler. Arama tercihi getirilen ilanların
+dilini seçer; seçilen ilanın gerektirdiği dil CV dayanağını ve mülakatın dilini belirler.
+Yanlış dildeki mülakat yanıtı puanlanmadan, gerekli dilde yeniden yanıt istenir.
+Adayın ülkesi bu kuralları değiştirmez. Kabul edilen yanıtları yapay zekâ puanlar.
+
 Kapaktaki tarih `TBD` olarak duruyor. Başarı kriterleri pilot için taslak hedeflerdir.
 ₺12,000 bütçe, TÜBİTAK 2209-A kapsamında **talep edilen** hizmet bütçesidir;
 başvuru durumu **Application pending** olarak gösterilir.
